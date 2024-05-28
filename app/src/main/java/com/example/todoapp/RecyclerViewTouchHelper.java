@@ -38,7 +38,7 @@ public class RecyclerViewTouchHelper extends ItemTouchHelper.SimpleCallback {
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    adapter.deletTask(position);
+                    adapter.deleteTask(position);
                 }
             });
             builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
