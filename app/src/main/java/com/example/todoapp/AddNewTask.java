@@ -23,10 +23,8 @@ public class AddNewTask extends BottomSheetDialogFragment {
 
     public static final String TAG = "AddNewTask";
 
-    // Widgets
     private EditText mEditText;
     private Button mSaveButton;
-
     private DataBaseHelper myDb;
 
     public static AddNewTask newInstance() {
@@ -36,7 +34,8 @@ public class AddNewTask extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.add_newtask, container, false);
+        View v = inflater.inflate(R.layout.add_newtask, container, false);
+        return v;
     }
 
     @Override
@@ -50,10 +49,31 @@ public class AddNewTask extends BottomSheetDialogFragment {
 
         final Bundle bundle = getArguments();
         if (bundle != null) {
-            handleUpdateTask(bundle);
-        } else {
-            mSaveButton.setEnabled(false);
-            mSaveButton.setBackgroundColor(Color.GRAY);
+            String task = bundle.getString("task");
+            mEditText.setText(task);
+            if (task.length() > 0) {
+                mSaveButton.setEnabled(true);
+                mSaveButton.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            }
+
+            mSaveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String text = mEditText.getText().toString();
+                    if (bundle != null) {
+                        int id = bundle.getInt("id");
+                        int status = bundle.getInt("status"); // Get the status from bundle
+                        myDb.updateTask(id, text);
+                        myDb.updateStatus(id, status); // Preserve the status
+                    } else {
+                        ToDoModel item = new ToDoModel();
+                        item.setTask(text);
+                        item.setStatus(0);
+                        myDb.insertTask(item);
+                    }
+                    dismiss();
+                }
+            });
         }
 
         mEditText.addTextChangedListener(new TextWatcher() {
@@ -62,58 +82,26 @@ public class AddNewTask extends BottomSheetDialogFragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                toggleSaveButton(s.toString());
+                if (s.toString().equals("")) {
+                    mSaveButton.setEnabled(false);
+                    mSaveButton.setBackgroundColor(Color.GRAY);
+                } else {
+                    mSaveButton.setEnabled(true);
+                    mSaveButton.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                }
             }
 
             @Override
             public void afterTextChanged(Editable s) {}
         });
-
-        mSaveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveTask(bundle);
-            }
-        });
-    }
-
-    private void handleUpdateTask(Bundle bundle) {
-        String task = bundle.getString("task");
-        mEditText.setText(task);
-        mSaveButton.setEnabled(task != null && !task.isEmpty());
-        mSaveButton.setBackgroundColor(task != null && !task.isEmpty() ? getResources().getColor(R.color.colorPrimary) : Color.GRAY);
-    }
-
-    private void toggleSaveButton(String text) {
-        if (text.isEmpty()) {
-            mSaveButton.setEnabled(false);
-            mSaveButton.setBackgroundColor(Color.GRAY);
-        } else {
-            mSaveButton.setEnabled(true);
-            mSaveButton.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        }
-    }
-
-    private void saveTask(Bundle bundle) {
-        String text = mEditText.getText().toString();
-
-        if (bundle != null) {
-            myDb.updateTask(bundle.getInt("id"), text);
-        } else {
-            ToDoModel item = new ToDoModel();
-            item.setTask(text);
-            item.setStatus(0);
-            myDb.insertTask(item);
-        }
-        dismiss();
     }
 
     @Override
-    public void onDismiss(@NonNull DialogInterface dialogInterface) {
-        super.onDismiss(dialogInterface);
+    public void onDismiss(@NonNull DialogInterface dialog) {
+        super.onDismiss(dialog);
         Activity activity = getActivity();
-        if (activity instanceof OnDialogCloseListner) {
-            ((OnDialogCloseListner) activity).onDialogClose(dialogInterface);
+        if (activity instanceof OnDialogCloseListener) {
+            ((OnDialogCloseListener) activity).onDialogClose(dialog);
         }
     }
 }

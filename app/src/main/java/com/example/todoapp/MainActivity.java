@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnDialogCloseListner {
+public class MainActivity extends AppCompatActivity implements OnDialogCloseListener {
 
     private RecyclerView mRecyclerView;
     private FloatingActionButton fab;
