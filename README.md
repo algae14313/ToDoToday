@@ -20,7 +20,22 @@ To install TodoToday on your Android device, follow these steps:
 3. Build and run the app on your emulator or connected device.
 4. Alternatively, download the APK from the releases page and install it manually on your Android device.
 
-##Usage
+## Usage
 - **Adding Tasks**: Tap the "Add Task" button, input your task name, description, and set a deadline if necessary. Press "Save" to store it.
 - **Managing Notes**: Tap on the "Add Note" option, type your note, and hit "Save."
 - **Mark Tasks Complete**: Toggle the task’s status by marking it as complete or incomplete from the task list.
+
+Contributing
+If you'd like to contrbute to TodoToday. feel free to fork the repository submit a pun request
+Please follow the standard GitHub flow.
+1. Fork the repository.
+2. Create a new branch ( `git cteckout -b feature/your-feature` ).
+3. Make your changes.
+4. Commit your changes ( `git c.it -n 'Add neu feature` )•
+5. Push to your branch ( `git push origin feature/your-feature` ).
+6. Create a new pull request
+
+
+
+
+
