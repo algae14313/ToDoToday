@@ -14,7 +14,7 @@ To install TodoToday on your Android device, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/todotoday.git
+   git clone https://github.com/algae14313/todotoday.git
 2. Open the project in Android Studio.
 3. Build and run the app on your emulator or connected device.
 4. Alternatively, download the APK from the releases page and install it manually on your Android device.
