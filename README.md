@@ -29,7 +29,7 @@ If you'd like to contrbute to TodoToday. feel free to fork the repository submit
 1. Fork the repository.
 2. Create a new branch ( `git cteckout -b feature/your-feature` ).
 3. Make your changes.
-4. Commit your changes ( `git c.it -n 'Add neu feature` )•
+4. Commit your changes ( `git c.it -n 'Add new feature` )•
 5. Push to your branch ( `git push origin feature/your-feature` ).
 6. Create a new pull request
 
