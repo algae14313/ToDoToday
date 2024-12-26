@@ -7,6 +7,12 @@
 - **Task Status**: Mark tasks as complete or incomplete.
 - **Simple UI**: Minimal and intuitive design to enhance usability.
 
+## Screenshots
+<img src="https://media.discordapp.net/attachments/894373875503206420/1245034362609602640/Screenshot_20240528-231902_To_Do_App.png?ex=676e1d5b&is=676ccbdb&hm=5832e93e617bed6986e79d97722605195253c323ac04f6834433fe9516e950a1&=&format=webp&quality=lossless&width=332&height=702" alt="Screenshot 1" width="300">
+
+<img src="https://media.discordapp.net/attachments/894373875503206420/1245034364924854376/Screenshot_20240528-232004_To_Do_App.png?ex=676e1d5c&is=676ccbdc&hm=fcb039910d5d8b3e026d68e8bb8ea0131f7f8fbcf0af8f236e3a7ebf09680dec&=&format=webp&quality=lossless&width=332&height=702" alt="Screenshot 2" width="300">
+
+
 ## Installation
 
 To install TodoToday on your Android device, follow these steps:
