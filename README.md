@@ -4,7 +4,6 @@
 
 ## Features
 - **Task Management**: Add, edit, and delete tasks with deadlines and priorities.
-- **Note Taking**: Write, save, and view notes for quick reference.
 - **Task Status**: Mark tasks as complete or incomplete.
 - **Simple UI**: Minimal and intuitive design to enhance usability.
 
