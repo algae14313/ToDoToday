@@ -1,6 +1,6 @@
 # TodoToday - A Simple Task Tracker
 
-**TodoToday** is a lightweight Android application designed to help you manage your tasks efficiently. Whether you're planning your day or jotting down quick thoughts, TodoToday helps you stay organized with a user-friendly interface. This project was made in fulfillment of Application Development and Emerging Technologies and it's final requirement.
+**TodoToday** is a lightweight Android application designed to help you manage your tasks efficiently. Whether you're planning your day or jotting down quick thoughts, TodoToday helps you stay organized with a simple user-friendly interface. This project was made in fulfillment of Application Development and Emerging Technologies and it's final requirement.
 
 ## Features
 - **Task Management**: Add, edit, and delete tasks with deadlines and priorities.
